@@ -1,0 +1,21 @@
+{
+  "name": "jnn-2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build-css": "tailwindcss -i ./wwwroot/css/input.css -o ./wwwroot/css/output.css",
+    "build-css:watch": "tailwindcss -i ./wwwroot/css/input.css -o ./wwwroot/css/output.css --watch",
+    "build-css:minify": "tailwindcss -i ./wwwroot/css/input.css -o ./wwwroot/css/output.css --minify",
+    "dev": "concurrently \"npm run build-css:watch\" \"dotnet watch run\"",
+    "build": "npm run build-css:minify && dotnet build -c Release",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "tailwindcss": "^4.1.14"
+  }
+}
