@@ -10,13 +10,13 @@
     </div>
     
     <!-- Navigation -->
-    <nav class="fixed top-0 left-0 w-full z-50 bg-white/95 backdrop-blur-sm shadow-lg">
+        <nav class="fixed top-0 left-0 w-full z-50 bg-white/95 backdrop-blur-sm shadow-lg">
         <div class="container mx-auto px-6 py-4">
             <div class="flex justify-between items-center">
                 <div class="text-2xl font-bold font-poppins text-blue-600">
                     🧺 JNN Laundry
                 </div>
-                
+
                 <!-- Desktop Navigation -->
                 <div class="hidden md:flex space-x-6">
                     <a href="#home" class="font-medium text-gray-800 hover:text-blue-600 transition duration-300">Home</a>
@@ -24,15 +24,16 @@
                     <a href="#pricing" class="font-medium text-gray-800 hover:text-blue-600 transition duration-300">Pricing</a>
                     <a href="#contact" class="font-medium text-gray-800 hover:text-blue-600 transition duration-300">Contact</a>
                 </div>
-                
+
                 <!-- Mobile Menu Button -->
                 <button class="md:hidden mobile-menu-button text-gray-800 hover:text-blue-600 focus:outline-none">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16" />
                     </svg>
                 </button>
             </div>
-            
+
             <!-- Mobile Navigation -->
             <div class="mobile-menu hidden md:hidden mt-4 pb-4">
                 <div class="flex flex-col space-y-3">
@@ -43,8 +44,9 @@
                 </div>
             </div>
         </div>
-    </nav>    <!-- Hero Content -->
-    <div class="container mx-auto px-6 text-center text-white animate-fadeIn pt-20">
+    </nav>
+    <!-- Hero Content -->
+    <div class="container mx-auto px-6 text-center text-black animate-fadeIn pt-20">
         <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold font-poppins mb-6 leading-tight text-shadow">
             Laundry Cepat, Bersih, dan Wangi
         </h1>
@@ -127,6 +129,60 @@
                 <p class="text-gray-600">Gratis area sekitar untuk kemudahan maksimal</p>
             </div>
         </div>
+
+        <!-- Detail Layanan Satuan & Dry Clean -->
+        <div class="mt-16">
+            <h3 class="text-2xl font-bold text-gray-800 mb-6 text-center">Layanan Satuan & Dry Clean</h3>
+            <div class="overflow-x-auto flex justify-center">
+                <table class="min-w-[400px] max-w-xl w-full bg-white rounded-xl shadow-md mx-auto text-center">
+                    <thead>
+                        <tr class="bg-blue-100 text-blue-800">
+                            <th class="py-3 px-4 font-semibold text-center">Jenis Barang</th>
+                            <th class="py-3 px-4 font-semibold text-center">Harga Cuci Satuan</th>
+                            <th class="py-3 px-4 font-semibold text-center">Harga Dry Clean</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-gray-700">
+                        <tr class="border-b">
+                            <td class="py-3 px-4">Kemeja / Kaos / Celana</td>
+                            <td class="py-3 px-4">Rp7.000</td>
+                            <td class="py-3 px-4">Rp15.000</td>
+                        </tr>
+                        <tr class="border-b">
+                            <td class="py-3 px-4">Jas / Blazer</td>
+                            <td class="py-3 px-4">Rp20.000</td>
+                            <td class="py-3 px-4">Rp35.000</td>
+                        </tr>
+                        <tr class="border-b">
+                            <td class="py-3 px-4">Bed Cover (Single)</td>
+                            <td class="py-3 px-4">Rp25.000</td>
+                            <td class="py-3 px-4">Rp40.000</td>
+                        </tr>
+                        <tr class="border-b">
+                            <td class="py-3 px-4">Bed Cover (Queen/King)</td>
+                            <td class="py-3 px-4">Rp35.000</td>
+                            <td class="py-3 px-4">Rp55.000</td>
+                        </tr>
+                        <tr class="border-b">
+                            <td class="py-3 px-4">Sprei / Selimut</td>
+                            <td class="py-3 px-4">Rp15.000</td>
+                            <td class="py-3 px-4">Rp25.000</td>
+                        </tr>
+                        <tr class="border-b">
+                            <td class="py-3 px-4">Boneka (kecil/sedang)</td>
+                            <td class="py-3 px-4">Rp15.000</td>
+                            <td class="py-3 px-4">Rp25.000</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3 px-4">Jaket / Sweater</td>
+                            <td class="py-3 px-4">Rp12.000</td>
+                            <td class="py-3 px-4">Rp20.000</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="text-sm text-gray-500 mt-2 text-center">*Harga dapat berubah sewaktu-waktu. Untuk item lain silakan hubungi kami.</p>
+        </div>
     </div>
 </section>
 
@@ -186,6 +242,44 @@
                     Pilih Paket
                 </button>
             </div>
+        </div>
+
+        <!-- Breakdown Harga Kiloan -->
+        <div class="mt-12 max-w-3xl mx-auto">
+            <h3 class="text-xl font-bold text-gray-800 mb-4 text-center">Rincian Harga Laundry Kiloan</h3>
+            <div class="overflow-x-auto">
+                <table class="min-w-full bg-white rounded-xl shadow-md">
+                    <thead>
+                        <tr class="bg-blue-100 text-blue-800">
+                            <th class="py-3 px-4 text-left font-semibold">Paket</th>
+                            <th class="py-3 px-4 text-left font-semibold">Minimal Berat</th>
+                            <th class="py-3 px-4 text-left font-semibold">Estimasi Selesai</th>
+                            <th class="py-3 px-4 text-left font-semibold">Fasilitas</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-gray-700">
+                        <tr class="border-b">
+                            <td class="py-3 px-4">Basic</td>
+                            <td class="py-3 px-4">3 kg</td>
+                            <td class="py-3 px-4">2-3 Hari</td>
+                            <td class="py-3 px-4">Cuci + Kering, Deterjen Berkualitas, Wangi</td>
+                        </tr>
+                        <tr class="border-b">
+                            <td class="py-3 px-4">Express</td>
+                            <td class="py-3 px-4">3 kg</td>
+                            <td class="py-3 px-4">1 Hari</td>
+                            <td class="py-3 px-4">Cuci + Kering, Deterjen Premium, Prioritas</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3 px-4">Premium</td>
+                            <td class="py-3 px-4">3 kg</td>
+                            <td class="py-3 px-4">1-2 Hari</td>
+                            <td class="py-3 px-4">Cuci + Setrika, Antar Jemput, Deterjen Premium</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="text-sm text-gray-500 mt-2 text-center">*Minimal order 3 kg untuk layanan kiloan. Sudah termasuk kemasan dan parfum laundry.</p>
         </div>
     </div>
 </section>
@@ -328,6 +422,15 @@
         </div>
     </div>
 </section>
+
+<!-- Floating WhatsApp Button -->
+<a href="https://wa.me/6281234567890?text=Halo%20JNN%20Laundry!%20Saya%20ingin%20laundry." target="_blank" rel="noopener noreferrer"
+   class="fixed z-50 bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white rounded-full shadow-lg flex items-center justify-center w-16 h-16 transition duration-300 animate-bounce group">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" class="w-8 h-8">
+        <path d="M16 3C9.373 3 4 8.373 4 15c0 2.637.86 5.08 2.35 7.09L4 29l7.18-2.31C13.13 27.56 14.54 28 16 28c6.627 0 12-5.373 12-12S22.627 3 16 3zm0 22c-1.29 0-2.56-.25-3.75-.74l-.27-.11-4.27 1.37 1.4-4.16-.18-.28C7.3 18.1 6.5 16.59 6.5 15c0-5.24 4.26-9.5 9.5-9.5s9.5 4.26 9.5 9.5-4.26 9.5-9.5 9.5zm5.13-7.13c-.28-.14-1.65-.81-1.9-.9-.25-.09-.43-.14-.61.14-.18.28-.7.9-.86 1.08-.16.18-.32.2-.6.07-.28-.14-1.18-.44-2.25-1.41-.83-.74-1.39-1.65-1.56-1.93-.16-.28-.02-.43.12-.57.13-.13.28-.32.42-.48.14-.16.18-.28.28-.46.09-.18.05-.34-.02-.48-.07-.14-.61-1.47-.84-2.01-.22-.53-.45-.46-.61-.47-.16-.01-.34-.01-.52-.01-.18 0-.48.07-.73.34-.25.27-.96.94-.96 2.29s.98 2.66 1.12 2.85c.14.18 1.93 2.95 4.68 4.02.65.28 1.16.45 1.56.58.65.21 1.24.18 1.7.11.52-.08 1.65-.67 1.88-1.32.23-.65.23-1.2.16-1.32-.07-.12-.25-.18-.53-.32z"/>
+    </svg>
+    <span class="absolute opacity-0 group-hover:opacity-100 bg-black text-white text-xs rounded px-2 py-1 bottom-20 right-0 whitespace-nowrap transition-opacity duration-300">Chat WhatsApp</span>
+</a>
 
 <!-- Footer -->
 <footer class="bg-gray-800 text-white py-12">
