@@ -1,217 +1,54 @@
-# 🧺 JNN Laundry Website
-
-Website modern dan responsif untuk layanan laundry menggunakan **Blazor Web App (.NET 8)** dengan **TailwindCSS**.
-
-## ✨ Fitur Utama
-
-- **Single Page Application** dengan smooth scroll navigation
-- **Responsive design** yang optimal di semua device (mobile, tablet, desktop)
-- **Modern UI/UX** dengan TailwindCSS dan animasi halus
-- **Fast loading** dengan optimasi performa
-- **WhatsApp Integration** untuk kemudahan komunikasi
-- **Google Maps Integration** untuk navigasi ke lokasi
-- **Clean & Maintainable Code** dengan Blazor components
-
-## 🏗️ Struktur Website
-
-### 1. Hero Section
-
-- Logo dan navigasi
-- Judul utama dengan call-to-action
-- Background gradient yang menarik
-
-### 2. About Section
-
-- Informasi tentang JNN Laundry
-- Layout responsif dengan gambar dan teks
-
-### 3. Services Section
-
-- 4 layanan utama:
-  - 🧺 Laundry Kiloan
-  - 👕 Cuci Satuan
-  - 🧴 Dry Clean
-  - 🚗 Antar Jemput
-
-### 4. Pricing Section
-
-- 3 paket harga:
-  - Basic (Rp6.000/kg)
-  - Express (Rp8.000/kg)
-  - Premium (Rp10.000/kg)
-
-### 5. Contact Section
-
-- Form kontak yang terintegrasi dengan WhatsApp
-- Informasi kontak lengkap
-- Jam operasional
-- **Google Maps Integration** - Embed map dengan lokasi JNN Laundry
-
-### 6. Footer
-
-- Copyright dan social media links
-
-## 🚀 Cara Menjalankan
-
-### Prerequisites
-
-- .NET 8 SDK
-- Node.js (untuk TailwindCSS)
-
-### Instalasi dan Menjalankan
-
-1. **Clone repository**
-
-   ```bash
-   git clone <repository-url>
-   cd JNN-2
-   ```
-
-2. **Install dependencies**
-
-   ```bash
-   npm install
-   ```
-
-3. **Build TailwindCSS** (opsional, file sudah ada)
-
-   ```bash
-   npm run build-css
-   ```
-
-4. **Jalankan aplikasi**
-
-   ```bash
-   dotnet run
-   ```
-
-5. **Buka browser**
-   ```
-   http://localhost:5262
-   ```
-
-## 🎨 Styling
-
-### TailwindCSS Configuration
-
-- File konfigurasi: `tailwind.config.js`
-- Input CSS: `wwwroot/css/input.css`
-- Output CSS: `wwwroot/css/output.css`
-
-### Custom Colors
-
-- Primary: `#3b82f6` (blue-500)
-- Primary Light: `#60a5fa` (blue-400)
-- Primary Dark: `#1d4ed8` (blue-700)
-
-### Fonts
-
-- Primary: Poppins
-- Secondary: Inter
-
-## 📱 Responsive Breakpoints
-
-- **Mobile**: < 640px
-- **Tablet**: 640px - 768px
-- **Desktop**: 768px - 1024px
-- **Large Desktop**: > 1024px
-
-## 🛠️ Development
-
-### Building TailwindCSS
-
-```bash
-# Build once
-npm run build-css
-
-# Watch for changes
-npm run build-css:watch
-```
-
-### Project Structure
-
-```
-JNN-2/
-├── Components/
-│   ├── App.razor          # Main app component
-│   ├── Routes.razor       # Routing configuration
-│   ├── Layout/
-│   └── Pages/
-│       └── Home.razor     # Main landing page
-├── wwwroot/
-│   └── css/
-│       ├── input.css      # TailwindCSS input
-│       └── output.css     # Generated CSS
-├── tailwind.config.js     # TailwindCSS config
-└── package.json          # npm dependencies
-```
-
-## 🎯 Fitur Tambahan
-
-- Smooth scroll navigation
-- Hover effects pada cards
-- Responsive grid layouts
-- Modern gradient backgrounds
-- Shadow effects
-- Transition animations
-- **Embedded Google Maps** dengan tombol navigasi langsung
-- **Interactive contact form** yang langsung ke WhatsApp
-- **Mobile-first responsive design**
-
-## 📞 Kontak JNN Laundry
-
-- **Alamat**: Jl. Raya Parung, Bogor
-- **WhatsApp**: +62 812-3456-7890
-- **Instagram**: @jnnlaundry
-
-## 🔧 Troubleshooting
-
-### Masalah Umum
-
-1. **CSS tidak ter-load dengan benar**
-
-   ```bash
-   npm run build-css
-   ```
-
-2. **Port sudah digunakan**
-
-   - Ganti port di `Properties/launchSettings.json`
-   - Atau gunakan: `dotnet run --urls "http://localhost:5000"`
-
-3. **Aplikasi tidak ter-build**
-   ```bash
-   dotnet clean
-   dotnet restore
-   dotnet build
-   ```
-
-### Performance Tips
-
-- Gunakan `dotnet run -c Release` untuk production
-- Optimize gambar sebelum deploy
-- Enable compression di hosting
-
-## 🚀 Deployment
-
-### IIS (Windows Server)
-
-1. Publish aplikasi: `dotnet publish -c Release`
-2. Copy folder `publish` ke IIS
-3. Buat application pool .NET 8
-4. Set binding dan SSL
-
-### Linux (Nginx)
-
-1. Install .NET 8 runtime
-2. Setup systemd service
-3. Configure Nginx reverse proxy
-4. Setup SSL dengan Let's Encrypt
-
-## 📄 License
-
-© 2025 JNN Laundry. All rights reserved.
-
----
-
-**Dibuat dengan ❤️ menggunakan Blazor & TailwindCSS**
+# JNN Laundry — Blazor Web App (.NET 8)
+
+Landing page single-page untuk JNN Laundry yang modern, cepat, dan responsif. Dibangun dengan Blazor Web App (.NET 8) dan TailwindCSS (CDN) dengan navigasi smooth scroll, animasi, form WhatsApp, Google Maps embed, daftar layanan/harga, FAQ, dan dokumentasi singkat.
+
+## Tautan Dokumen
+- User Manual: https://docs.google.com/document/d/1mESyDz8uIiSCtmWEeVzbZfiE5PQEV--8mhAxzCJbRAw/edit?usp=sharing
+- Laporan: https://docs.google.com/document/d/1CjmCTH3KTNGOBlfwSryiAGSh4VXbJKPiWwTyCe72dX0/edit?usp=sharing
+
+## Fitur Utama
+- Desain single-page, responsif (mobile–desktop) dengan TailwindCSS CDN.
+- Navigasi smooth scroll dan efek animasi on-scroll.
+- Pemesanan via WhatsApp (CTA + form contact) dan tombol WhatsApp mengambang.
+- Google Maps embed lokasi + tombol “Buka di Maps”.
+- Layanan dan harga lengkap (kiloan, satuan, sepatu, karpet, dll.).
+- FAQ (accordion) dengan animasi buka/tutup.
+- SEO dasar: meta title/description, Google Fonts (Poppins, Inter).
+- .gitignore lengkap untuk .NET/Node/OS.
+
+## Cara Menjalankan (Developer)
+Prasyarat: .NET 8 SDK dan browser modern.
+
+Langkah cepat:
+1) Buka solusi di Visual Studio/VS Code.
+2) Jalankan (F5) atau perintah `dotnet run` di folder proyek.
+3) Buka URL yang muncul (contoh http://localhost:5xxx).
+
+Catatan:
+- Tailwind dipakai via CDN pada `Components/App.razor`, tidak perlu proses build CSS.
+- File `wwwroot/css/output.css` tidak dipakai saat CDN aktif (disimpan untuk opsi alternatif build Tailwind lokal).
+
+## Struktur Penting
+- `Components/App.razor` — head HTML, Tailwind CDN + config, script global, SEO.
+- `Components/Pages/Home.razor` — seluruh konten halaman (Hero, About/Features, Services, Pricing, Testimonials, CTA, FAQ, Location/Maps, Contact, Footer).
+- `Components/Layout/MainLayout.razor` — render single-page (`@Body`).
+- `wwwroot/` — aset gambar dan ikon (logo, ilustrasi, favicon).
+- `tailwind.config.js` — konfigurasi (referensi; saat ini CDN memuat config setara dari App.razor).
+
+## Kustomisasi Cepat
+- Nomor WhatsApp: edit fungsi `handleWhatsAppOrder()` dan `handleContactSubmit()` di `Home.razor`.
+- Peta/Alamat: ganti iframe Google Maps dan tautan “Buka di Maps” di bagian Location.
+- Harga/Layanan: ubah tabel pada section Pricing di `Home.razor`.
+- Jam Operasional dan CTA: edit teks pada section CTA/Contact.
+
+## Troubleshooting Ringkas
+- Style tidak terapkan: pastikan skrip CDN Tailwind aktif di `App.razor` dan hard reload (Ctrl+F5).
+- Ikon chevron FAQ membesar: sudah diberi kelas ukuran dan fallback width/height 24px pada `Home.razor`.
+- Konflik CSS: jangan memuat Bootstrap bersamaan jika tidak diperlukan.
+
+## Catatan Implementasi
+- Aset utama tersedia di `wwwroot/` (logo `jnn-logo.svg`, ilustrasi `modern-laundry-service-illustration-with-washing-m.jpg`, avatar `placeholder-user.jpg`, dsb.).
+- Semua gambar memiliki alt text, sebagian besar menggunakan lazy loading.
+
+## Lisensi/Kepemilikan
+Konten dan aset hanya untuk keperluan tugas/proyek JNN Laundry. Hak cipta gambar/logo mengikuti pemiliknya masing‑masing.
