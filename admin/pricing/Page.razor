@@ -1,0 +1,129 @@
+@page "/admin/pricing"
+@inject PricingService PricingService
+@inject NavigationManager Nav
+
+<h1>Admin - Pricing</h1>
+<p>Kelola harga layanan laundry</p>
+
+@if (!IsAdmin)
+{
+    <div class="alert alert-warning">
+        Anda login bukan sebagai admin. Hanya bisa melihat data.
+    </div>
+}
+
+<div class="row">
+    <!-- FORM -->
+    <div class="col-4">
+        <h3>@(EditingId == null ? "Tambah Harga Baru" : "Edit Harga")</h3>
+
+        <EditForm Model="FormData" OnValidSubmit="HandleSubmit">
+            <InputText @bind-Value="FormData.Service" placeholder="Nama layanan" class="form-control mb-2" />
+            <InputText @bind-Value="FormData.Price" placeholder="Harga" class="form-control mb-2" />
+            <InputText @bind-Value="FormData.Unit" placeholder="Satuan" class="form-control mb-2" />
+
+            <button class="btn btn-primary" disabled="@(!IsAdmin)">
+                @(EditingId == null ? "Tambah" : "Update")
+            </button>
+
+            @if (EditingId != null)
+            {
+                <button class="btn btn-secondary ms-2" type="button" @onclick="CancelEdit">
+                    Cancel
+                </button>
+            }
+        </EditForm>
+    </div>
+
+    <!-- TABLE -->
+    <div class="col-8">
+        <h3>Daftar Harga (@PricingItems.Count)</h3>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Layanan</th>
+                    <th>Harga</th>
+                    <th>Satuan</th>
+                    <th>Aksi</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in PricingItems)
+                {
+                    <tr>
+                        <td>@item.Service</td>
+                        <td>@item.Price</td>
+                        <td>@item.Unit</td>
+                        <td>
+                            <button class="btn btn-sm btn-outline-primary"
+                                    @onclick="() => Edit(item)"
+                                    disabled="@(!IsAdmin)">
+                                Edit
+                            </button>
+
+                            <button class="btn btn-sm btn-outline-danger ms-1"
+                                    @onclick="() => Delete(item.Id)"
+                                    disabled="@(!IsAdmin)">
+                                Delete
+                            </button>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+@code {
+    private List<PricingItem> PricingItems = new();
+    private PricingItem FormData = new();
+    private string? EditingId;
+    private bool IsAdmin = true; // ambil dari AuthService
+
+    protected override async Task OnInitializedAsync()
+    {
+        PricingItems = await PricingService.GetAllAsync();
+    }
+
+    private async Task HandleSubmit()
+    {
+        if (EditingId == null)
+        {
+            await PricingService.AddAsync(FormData);
+        }
+        else
+        {
+            FormData.Id = EditingId;
+            await PricingService.UpdateAsync(FormData);
+        }
+
+        ResetForm();
+        PricingItems = await PricingService.GetAllAsync();
+    }
+
+    private void Edit(PricingItem item)
+    {
+        EditingId = item.Id;
+        FormData = new PricingItem
+        {
+            Service = item.Service,
+            Price = item.Price,
+            Unit = item.Unit
+        };
+    }
+
+    private async Task Delete(string id)
+    {
+        await PricingService.DeleteAsync(id);
+        PricingItems = await PricingService.GetAllAsync();
+    }
+
+    private void CancelEdit() => ResetForm();
+
+    private void ResetForm()
+    {
+        EditingId = null;
+        FormData = new PricingItem();
+    }
+}
